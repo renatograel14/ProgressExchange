@@ -1,0 +1,14 @@
+<div data-role="view" data-title="Conference" data-layout="main" data-model="app.conference" data-show="app.conference.onShow" data-after-show="app.conference.afterShow">
+    <!-- START_CUSTOM_CODE_conference -->
+    <!-- END_CUSTOM_CODE_conference -->
+    <ul data-role="listview" data-style="inset" data-template="conferenceModelTemplate" data-bind="{ source: conferenceModel.dataSource, events: {click: conferenceModel.itemClick}}" data-pull-to-refresh="false" data-endless-scroll="false">
+    </ul>
+    <!-- START_CUSTOM_CODE_conferenceModel -->
+    <!-- END_CUSTOM_CODE_conferenceModel -->
+    <script type="text/x-kendo-template" id="conferenceModelTemplate">
+        <div class="image-with-text">
+            <h3>#: data['name'] #</h3>
+
+        </div>
+    </script>
+</div>

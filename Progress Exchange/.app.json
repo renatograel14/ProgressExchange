@@ -30,6 +30,28 @@
       "title": "Workshops",
       "addToNavigation": true,
       "icon": "organize"
+    },
+    {
+      "type": "view",
+      "components": [
+        {
+          "type": "list",
+          "name": "conferenceModel",
+          "dataProvider": "defaultProvider",
+          "collection": "Conference",
+          "headerField": "name",
+          "masterDetails": true,
+          "detailHeaderField": "date",
+          "detailSubHeaderField": "presenter",
+          "detailDescriptionField": "description",
+          "pullToRefresh": false,
+          "endlessScroll": false
+        }
+      ],
+      "name": "conference",
+      "title": "Conference",
+      "addToNavigation": true,
+      "icon": "organize"
     }
   ],
   "dataProviders": [
