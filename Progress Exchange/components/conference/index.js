@@ -46,6 +46,10 @@ app.conference = kendo.observable({
             schema: {
                 model: {
                     fields: {
+                        'division': {
+                            field: 'division',
+                            defaultValue: ''
+                        },
                         'name': {
                             field: 'name',
                             defaultValue: ''
@@ -53,6 +57,9 @@ app.conference = kendo.observable({
                     }
                 }
             },
+            serverSorting: true,
+            serverPaging: true,
+            pageSize: 50
         },
         dataSource = new kendo.data.DataSource(dataSourceOptions),
         conferenceModel = kendo.observable({
@@ -64,8 +71,8 @@ app.conference = kendo.observable({
                 var item = e.view.params.uid,
                     dataSource = conferenceModel.get('dataSource'),
                     itemModel = dataSource.getByUid(item);
-                if (!itemModel.date) {
-                    itemModel.date = String.fromCharCode(160);
+                if (!itemModel.name) {
+                    itemModel.name = String.fromCharCode(160);
                 }
                 conferenceModel.set('currentItem', itemModel);
             },

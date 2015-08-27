@@ -39,13 +39,15 @@
           "name": "conferenceModel",
           "dataProvider": "defaultProvider",
           "collection": "Conference",
-          "headerField": "name",
+          "headerField": "division",
+          "subHeaderField": "name",
+          "group": "division",
           "masterDetails": true,
-          "detailHeaderField": "date",
-          "detailSubHeaderField": "presenter",
+          "detailHeaderField": "name",
+          "detailSubHeaderField": "date",
           "detailDescriptionField": "description",
-          "pullToRefresh": false,
-          "endlessScroll": false
+          "pullToRefresh": true,
+          "endlessScroll": true
         }
       ],
       "name": "conference",
