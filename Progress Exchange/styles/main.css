@@ -140,5 +140,7 @@ div {
     color: white;
     font-family: "Geogrotesque-Regular",helvetica,sans-serif;
     -webkit-font-smoothing: antialiased;
-
+}
+#kendoUiMobileApp .km-footer {
+	background: #ff471d;
 }

@@ -34,6 +34,9 @@ app.conference = kendo.observable({
                 typeName: 'Conference',
                 dataProvider: dataProvider
             },
+            group: {
+                field: 'division'
+            },
 
             change: function(e) {
                 var data = this.data();
@@ -46,20 +49,17 @@ app.conference = kendo.observable({
             schema: {
                 model: {
                     fields: {
-                        'division': {
-                            field: 'division',
-                            defaultValue: ''
-                        },
                         'name': {
                             field: 'name',
+                            defaultValue: ''
+                        },
+                        'date': {
+                            field: 'date',
                             defaultValue: ''
                         },
                     }
                 }
             },
-            serverSorting: true,
-            serverPaging: true,
-            pageSize: 50
         },
         dataSource = new kendo.data.DataSource(dataSourceOptions),
         conferenceModel = kendo.observable({
