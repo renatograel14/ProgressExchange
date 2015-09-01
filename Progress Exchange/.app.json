@@ -7,15 +7,13 @@
         {
           "type": "about",
           "name": "homeModel",
-          "appName": "Progress Exchange 2015",
-          "appIcon": "png fundo exchange.png",
           "contactButton": false,
           "facebookButton": false,
           "twitterButton": false
         }
       ],
       "name": "home",
-      "title": "Progress Exchange 2015",
+      "title": "Home",
       "addToNavigation": true,
       "icon": "home"
     },
@@ -81,5 +79,5 @@
   "navigation": "tabstrip",
   "view": "home",
   "transition": "slide",
-  "skin": "flat"
+  "skin": "native"
 }

@@ -1,3 +1,6 @@
+div {
+	-webkit-font-smoothing: antialiased;
+}
 #kendoUiMobileApp .image-with-text img {
     float: left;
     margin-right: 15px;
@@ -130,4 +133,12 @@
 
 #kendoUiMobileApp #navigation-container .active:after {
     color: #fff;
+}
+
+#kendoUiMobileApp .km-view-title {
+	background: #ff471d;
+    color: white;
+    font-family: "Geogrotesque-Regular",helvetica,sans-serif;
+    -webkit-font-smoothing: antialiased;
+
 }

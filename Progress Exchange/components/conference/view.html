@@ -5,11 +5,16 @@
     <ul data-role="listview" data-style="" data-template="conferenceModelTemplate" data-bind="{ source: conferenceModel.dataSource, events: {click: conferenceModel.itemClick}}" data-pull-to-refresh="true" data-endless-scroll="true">
     </ul>
     <!-- START_CUSTOM_CODE_conferenceModel -->
+    <script type="text/x-kendo-template" id="conferenceHeaderTemplate">
+        <div class="image-with-text">
+            <h1> #:data.division # </h1>
+        </div>
+    </script>
     <!-- END_CUSTOM_CODE_conferenceModel -->
     <script type="text/x-kendo-template" id="conferenceModelTemplate">
         <div class="image-with-text">
-            <p>#: data['name'] # </p>
-            <p> #: data['date'] # </p>
+            <h3>#: data['division'] #</h3>
+            <p>#: data['name'] #</p>
         </div>
     </script>
 </div>
