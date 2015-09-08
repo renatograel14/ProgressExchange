@@ -47,14 +47,15 @@
           "name": "conferenceModel",
           "dataProvider": "defaultProvider",
           "collection": "Conference",
+          "iconField": true,
           "headerField": "name",
           "subHeaderField": "date",
-          "group": "division",
+          "group": "date",
           "masterDetails": true,
           "detailHeaderField": "name",
-          "detailSubHeaderField": "date",
           "detailDescriptionField": "description",
-          "pullToRefresh": false,
+          "detailImageField": "photo",
+          "pullToRefresh": true,
           "endlessScroll": false
         }
       ],

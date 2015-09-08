@@ -6,9 +6,9 @@
         </div>
     </header>
 
-    <h3 data-bind="text: currentItem.date"></h3>
-    <p data-bind="text: currentItem.description"></p>
 
+    <p data-bind="text: currentItem.description"></p>
+    <img data-bind="attr: { src: currentItem.photoUrl }" width="100%" height="auto">
     <!-- START_CUSTOM_CODE_conferenceModel -->
     <!-- END_CUSTOM_CODE_conferenceModel -->
 </div>

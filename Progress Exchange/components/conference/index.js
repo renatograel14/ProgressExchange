@@ -9,6 +9,19 @@ app.conference = kendo.observable({
 // END_CUSTOM_CODE_conference
 (function(parent) {
     var dataProvider = app.data.defaultProvider,
+        processImage = function(img) {
+            if (!img) {
+                var empty1x1png = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQI12NgYAAAAAMAASDVlMcAAAAASUVORK5CYII=';
+                img = 'data:image/png;base64,' + empty1x1png;
+            } else if (img.slice(0, 4) !== 'http' &&
+                img.slice(0, 2) !== '//' &&
+                img.slice(0, 5) !== 'data:') {
+                var setup = dataProvider.setup;
+                img = setup.scheme + ':' + setup.url + setup.apiKey + '/Files/' + img + '/Download';
+            }
+
+            return img;
+        },
         flattenLocationProperties = function(dataItem) {
             var propName, propValue,
                 isLocation = function(value) {
@@ -35,7 +48,7 @@ app.conference = kendo.observable({
                 dataProvider: dataProvider
             },
             group: {
-                field: 'division'
+                field: 'date'
             },
 
             change: function(e) {
@@ -57,6 +70,10 @@ app.conference = kendo.observable({
                             field: 'date',
                             defaultValue: ''
                         },
+                    },
+                    icon: function() {
+                        var i = 'globe';
+                        return kendo.format('km-icon km-{0}', i);
                     }
                 }
             },
@@ -71,6 +88,7 @@ app.conference = kendo.observable({
                 var item = e.view.params.uid,
                     dataSource = conferenceModel.get('dataSource'),
                     itemModel = dataSource.getByUid(item);
+                itemModel.photoUrl = processImage(itemModel.photo);
                 if (!itemModel.name) {
                     itemModel.name = String.fromCharCode(160);
                 }
