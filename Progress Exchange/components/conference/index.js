@@ -70,9 +70,21 @@ app.conference = kendo.observable({
                             field: 'date',
                             defaultValue: ''
                         },
+                        'presenter': {
+                            field: 'presenter',
+                            defaultValue: ''
+                        }
                     },
                     icon: function() {
-                        var i = 'globe';
+                        var i = 'details';
+                        return kendo.format('km-icon km-{0}', i);
+                    },
+                    iconPresenter: function() {
+                        var i = 'contacts';
+                        return kendo.format('km-icon km-{0}', i);
+                    },
+                    iconTrack: function(){
+                        var i = 'play';
                         return kendo.format('km-icon km-{0}', i);
                     }
                 }
