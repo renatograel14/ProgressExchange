@@ -11,6 +11,7 @@
 
                 // you can change the default transition (slide, zoom or fade)
                 transition: 'slide',
+                skin: 'flat',
                 // the application needs to know which view to load first
                 initial: 'components/home/view.html',
                 statusBarStyle: 'black-translucent'
