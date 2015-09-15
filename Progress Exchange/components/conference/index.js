@@ -1,15 +1,15 @@
 'use strict';
 
 app.conference = kendo.observable({
-    onShow: function() {},
-    afterShow: function() {}
+    onShow: function () {},
+    afterShow: function () {}
 });
 
 // START_CUSTOM_CODE_conference
 // END_CUSTOM_CODE_conference
-(function(parent) {
+(function (parent) {
     var dataProvider = app.data.defaultProvider,
-        processImage = function(img) {
+        processImage = function (img) {
             if (!img) {
                 var empty1x1png = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQI12NgYAAAAAMAASDVlMcAAAAASUVORK5CYII=';
                 img = 'data:image/png;base64,' + empty1x1png;
@@ -19,12 +19,11 @@ app.conference = kendo.observable({
                 var setup = dataProvider.setup;
                 img = setup.scheme + ':' + setup.url + setup.apiKey + '/Files/' + img + '/Download';
             }
-
             return img;
         },
-        flattenLocationProperties = function(dataItem) {
+        flattenLocationProperties = function (dataItem) {
             var propName, propValue,
-                isLocation = function(value) {
+                isLocation = function (value) {
                     return propValue && typeof propValue === 'object' &&
                         propValue.longitude && propValue.latitude;
                 };
@@ -50,8 +49,14 @@ app.conference = kendo.observable({
             group: {
                 field: 'date'
             },
-
-            change: function(e) {
+            sort: [{
+                field: "date",
+                dir: 'asc'
+            }, {
+                field: "division",
+                dir: 'asc'
+            }],
+            change: function (e) {
                 var data = this.data();
                 for (var i = 0; i < data.length; i++) {
                     var dataItem = data[i];
@@ -75,15 +80,15 @@ app.conference = kendo.observable({
                             defaultValue: ''
                         }
                     },
-                    icon: function() {
+                    icon: function () {
                         var i = 'details';
                         return kendo.format('km-icon km-{0}', i);
                     },
-                    iconPresenter: function() {
+                    iconPresenter: function () {
                         var i = 'contacts';
                         return kendo.format('km-icon km-{0}', i);
                     },
-                    iconTrack: function(){
+                    iconTrack: function () {
                         var i = 'play';
                         return kendo.format('km-icon km-{0}', i);
                     }
@@ -93,10 +98,10 @@ app.conference = kendo.observable({
         dataSource = new kendo.data.DataSource(dataSourceOptions),
         conferenceModel = kendo.observable({
             dataSource: dataSource,
-            itemClick: function(e) {
+            itemClick: function (e) {
                 app.mobileApp.navigate('#components/conference/details.html?uid=' + e.dataItem.uid);
             },
-            detailsShow: function(e) {
+            detailsShow: function (e) {
                 var item = e.view.params.uid,
                     dataSource = conferenceModel.get('dataSource'),
                     itemModel = dataSource.getByUid(item);

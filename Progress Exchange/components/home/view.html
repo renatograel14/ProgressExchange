@@ -1,4 +1,4 @@
-<div data-role="view" data-title="Progress Exchange" data-layout="main" data-model="app.home" data-show="app.home.onShow" data-after-show="app.home.afterShow">
+<div data-role="view" data-title="Progress Exchange" data-layout="main" data-model="app.home" data-init='app.home.openLink' data-show="app.home.onShow" data-after-show="app.home.afterShow">
     <div class="about-view" data-bind="invisible:error">
         <div class="icon-group">
             <div class="app-details">
@@ -13,7 +13,7 @@
         <!-- END_CUSTOM_CODE_homeModel -->
     </div>
     <!-- START_CUSTOM_CODE_home -->
-    <div style="text-align: center; padding: 30px;">
+    <div style="text-align: center; padding: 30px;" class="">
         <h3>Workshops dia 5 de outubro</h3>
         <h3>Conferências dia 6 de outubro</h3>
         <h3>Sheraton Rio de Janeiro WTC Hotel</h3>
@@ -21,7 +21,5 @@
             <a href="www.sheratonsaopaulowtc.com.br">www.sheratonsaopaulowtc.com.br</a>
         </p>
     </div>
-    <!--Location View-->
-    <div id="map-canvas"></div>
     <!-- END_CUSTOM_CODE_home -->
 </div>

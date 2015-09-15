@@ -6,10 +6,8 @@
     <meta charset="utf-8">
     <link href="bower_components/kendo-ui-appbuilder-core/styles/kendo.mobile.all.min.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
-
     <!-- cordova script (this will be a 404 during development if served with `grunt serve`) -->
     <script src="cordova.js"></script>
-
     <script src="bower_components/kendo-ui-appbuilder-core/js/jquery.min.js"></script>
     <script src="bower_components/kendo-ui-appbuilder-core/js/kendo.mobile.min.js"></script>
     <script src="bower_components/everlive/min/everlive.all.min.js"></script>
@@ -17,7 +15,6 @@
     <script src="lib/progress/progress.all.min.js"></script>
     <script src="app.js"></script>
     <script src="dataProviders/defaultProvider.js"></script>
-    
 </head>
 
 <body id="kendoUiMobileApp">
@@ -30,27 +27,25 @@
                 <span data-role="view-title"></span>
             </div>
         </header>
-
         <!-- application views will be rendered here -->
-
+        
         <footer data-role="footer">
             <div data-role="tabstrip" id="navigation-container">
                 <a href="components/home/view.html" data-icon="home">Exchange</a>
+                <a href="componenst/home/location.html" data-icon="search">Location</a>
                 <a href="components/workshops/view.html" data-icon="settings">Workshops</a>
                 <a href="components/conference/view.html" data-icon="globe">Conferences</a>
             </div>
         </footer>
+        
     </div>
-
     <div data-role="layout" data-id="main-nonav">
         <header data-role="header">
             <div data-role="navbar">
                 <span data-role="view-title"></span>
             </div>
         </header>
-
         <!-- application views will be rendered here -->
-
         <footer data-role="footer">
         </footer>
     </div>
