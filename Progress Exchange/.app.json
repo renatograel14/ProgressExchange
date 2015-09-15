@@ -63,6 +63,14 @@
       "title": "Conference",
       "addToNavigation": true,
       "icon": "organize"
+    },
+    {
+      "type": "view",
+      "components": [],
+      "name": "location",
+      "title": "Como Chegar?",
+      "addToNavigation": true,
+      "icon": "action"
     }
   ],
   "dataProviders": [
