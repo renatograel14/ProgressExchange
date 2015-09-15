@@ -9,6 +9,19 @@ app.workshops = kendo.observable({
 // END_CUSTOM_CODE_workshops
 (function(parent) {
     var dataProvider = app.data.defaultProvider,
+        processImage = function(img) {
+            if (!img) {
+                var empty1x1png = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQI12NgYAAAAAMAASDVlMcAAAAASUVORK5CYII=';
+                img = 'data:image/png;base64,' + empty1x1png;
+            } else if (img.slice(0, 4) !== 'http' &&
+                img.slice(0, 2) !== '//' &&
+                img.slice(0, 5) !== 'data:') {
+                var setup = dataProvider.setup;
+                img = setup.scheme + ':' + setup.url + setup.apiKey + '/Files/' + img + '/Download';
+            }
+
+            return img;
+        },
         flattenLocationProperties = function(dataItem) {
             var propName, propValue,
                 isLocation = function(value) {
@@ -34,6 +47,9 @@ app.workshops = kendo.observable({
                 typeName: 'Workshops',
                 dataProvider: dataProvider
             },
+            group: {
+                field: 'date'
+            },
 
             change: function(e) {
                 var data = this.data();
@@ -53,9 +69,6 @@ app.workshops = kendo.observable({
                     }
                 }
             },
-            serverSorting: true,
-            serverPaging: true,
-            pageSize: 50
         },
         dataSource = new kendo.data.DataSource(dataSourceOptions),
         workshopsModel = kendo.observable({
@@ -67,8 +80,9 @@ app.workshops = kendo.observable({
                 var item = e.view.params.uid,
                     dataSource = workshopsModel.get('dataSource'),
                     itemModel = dataSource.getByUid(item);
-                if (!itemModel.name) {
-                    itemModel.name = String.fromCharCode(160);
+                itemModel.dateUrl = processImage(itemModel.date);
+                if (!itemModel.date) {
+                    itemModel.date = String.fromCharCode(160);
                 }
                 workshopsModel.set('currentItem', itemModel);
             },

@@ -26,12 +26,14 @@
           "dataProvider": "defaultProvider",
           "collection": "Workshops",
           "headerField": "name",
+          "group": "date",
           "masterDetails": true,
-          "detailHeaderField": "name",
+          "detailHeaderField": "date",
           "detailSubHeaderField": "date",
-          "detailDescriptionField": "description",
-          "pullToRefresh": true,
-          "endlessScroll": true
+          "detailDescriptionField": "date",
+          "detailImageField": "date",
+          "pullToRefresh": false,
+          "endlessScroll": false
         }
       ],
       "name": "workshops",
@@ -71,26 +73,6 @@
       "title": "Como Chegar?",
       "addToNavigation": true,
       "icon": "action"
-    },
-    {
-      "type": "view",
-      "components": [
-        {
-          "type": "list",
-          "name": "dataListViewModel",
-          "dataProvider": "defaultProvider",
-          "collection": "Workshops",
-          "headerField": "name",
-          "masterDetails": true,
-          "detailImageField": "date",
-          "pullToRefresh": false,
-          "endlessScroll": false
-        }
-      ],
-      "name": "dataListView",
-      "title": "Data List",
-      "addToNavigation": true,
-      "icon": "organize"
     }
   ],
   "dataProviders": [
