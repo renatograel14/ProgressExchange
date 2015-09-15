@@ -71,6 +71,26 @@
       "title": "Como Chegar?",
       "addToNavigation": true,
       "icon": "action"
+    },
+    {
+      "type": "view",
+      "components": [
+        {
+          "type": "list",
+          "name": "dataListViewModel",
+          "dataProvider": "defaultProvider",
+          "collection": "Workshops",
+          "headerField": "name",
+          "masterDetails": true,
+          "detailImageField": "date",
+          "pullToRefresh": false,
+          "endlessScroll": false
+        }
+      ],
+      "name": "dataListView",
+      "title": "Data List",
+      "addToNavigation": true,
+      "icon": "organize"
     }
   ],
   "dataProviders": [
