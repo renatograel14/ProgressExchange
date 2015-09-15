@@ -1,4 +1,10 @@
-<div data-role="view" data-title="Como Chegar?" data-layout="main" data-model="app.location" data-show="app.location.onShow" data-after-show="app.location.afterShow">
+<div data-role="view" data-title="Como Chegar?" data-layout="main" data-init="app.locationService.initLocation" data-show="app.locationService.show" data-hide="app.locationService.hide" data-model="app.locationService.viewModel" data-stretch="true">
     <!-- START_CUSTOM_CODE_location -->
-    <!-- END_CUSTOM_CODE_location -->
+    <!--Location View-->
+    <div id="map-canvas" class="map" data-bind="visible: isGoogleMapsInitialized"></div>
+    <div id="no-map" data-bind="invisible: isGoogleMapsInitialized">
+        <h3>Location requires internet connection to display the map.</h3>
+    </div>
+</div>
+<!-- END_CUSTOM_CODE_location -->
 </div>

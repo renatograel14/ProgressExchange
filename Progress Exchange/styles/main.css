@@ -78,6 +78,7 @@ div {
     background-color: #fcfcfc;
 }
 
+
 #kendoUiMobileApp .icon-group .app-icon,
 #kendoUiMobileApp .icon-group .app-details {
     display: table-cell;
@@ -111,6 +112,26 @@ div {
 
 /* START_CUSTOM_CODE_kendoUiMobileApp */
 
+
+.km-flat .km-loader{
+    color: #ff471d;
+}
+
+.km-flat .km-view .km-tabstrip .km-button.km-state-active {
+    background-color: #cb2020;
+}
+
+.km-flat .km-view .km-content {
+    color: #fcfcfc;
+    background-color: #333;
+    background-image: url(./local-progress-exchange.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.km-flat .km-view .km-content .km-list > li {
+    background-color: rgba(0, 100, 180, 0.4);
+}
 
 /* END_CUSTOM_CODE_kendoUiMobileApp */
 
