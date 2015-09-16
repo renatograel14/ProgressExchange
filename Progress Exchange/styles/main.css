@@ -121,7 +121,7 @@ div {
     background-color: #cb2020;
 }
 
-.km-flat .km-view .km-content {
+.km-flat .km-navbar, .km-flat .k-toolbar, .km-flat .km-detail, .km-flat .km-content {
     color: #fcfcfc;
     background-color: #333;
     background-image: url(./local-progress-exchange.png);

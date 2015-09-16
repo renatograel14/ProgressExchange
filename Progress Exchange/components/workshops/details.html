@@ -5,10 +5,12 @@
             <span data-bind="text: currentItem.date" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: center; display: block; margin-left: 70px; margin-right: 70px;"></span>
         </div>
     </header>
-
-    <h3 data-bind="text: currentItem.name"></h3>
-    <p data-bind="text: currentItem.description"></p>
-    <img data-bind="attr: { src: currentItem.photoUrl }" width="100%" height="auto">
+    <div style="text-align: center">
+        <h3 data-bind="text: currentItem.name"></h3>
+        <p data-bind="text: currentItem.description"></p>
+        <span> <b>Apresentador:</b> <p data-bind="text: currentItem.presenter"> </p></span>
+        <img data-bind="attr: { src: currentItem.photoUrl }" width="100%" height="auto">
+    </div>
     <!-- START_CUSTOM_CODE_workshopsModel -->
     <!-- END_CUSTOM_CODE_workshopsModel -->
 </div>
