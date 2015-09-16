@@ -29,9 +29,9 @@
           "group": "date",
           "masterDetails": true,
           "detailHeaderField": "date",
-          "detailSubHeaderField": "date",
-          "detailDescriptionField": "date",
-          "detailImageField": "date",
+          "detailSubHeaderField": "name",
+          "detailDescriptionField": "description",
+          "detailImageField": "photo",
           "pullToRefresh": false,
           "endlessScroll": false
         }

@@ -80,7 +80,7 @@ app.workshops = kendo.observable({
                 var item = e.view.params.uid,
                     dataSource = workshopsModel.get('dataSource'),
                     itemModel = dataSource.getByUid(item);
-                itemModel.dateUrl = processImage(itemModel.date);
+                itemModel.photoUrl = processImage(itemModel.photo);
                 if (!itemModel.date) {
                     itemModel.date = String.fromCharCode(160);
                 }
