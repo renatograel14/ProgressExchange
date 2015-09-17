@@ -1,15 +1,15 @@
 'use strict';
 
 app.workshops = kendo.observable({
-    onShow: function() {},
-    afterShow: function() {}
+    onShow: function () {},
+    afterShow: function () {}
 });
 
 // START_CUSTOM_CODE_workshops
 // END_CUSTOM_CODE_workshops
-(function(parent) {
+(function (parent) {
     var dataProvider = app.data.defaultProvider,
-        processImage = function(img) {
+        processImage = function (img) {
             if (!img) {
                 var empty1x1png = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQI12NgYAAAAAMAASDVlMcAAAAASUVORK5CYII=';
                 img = 'data:image/png;base64,' + empty1x1png;
@@ -22,9 +22,9 @@ app.workshops = kendo.observable({
 
             return img;
         },
-        flattenLocationProperties = function(dataItem) {
+        flattenLocationProperties = function (dataItem) {
             var propName, propValue,
-                isLocation = function(value) {
+                isLocation = function (value) {
                     return propValue && typeof propValue === 'object' &&
                         propValue.longitude && propValue.latitude;
                 };
@@ -51,7 +51,7 @@ app.workshops = kendo.observable({
                 field: 'date'
             },
 
-            change: function(e) {
+            change: function (e) {
                 var data = this.data();
                 for (var i = 0; i < data.length; i++) {
                     var dataItem = data[i];
@@ -66,17 +66,25 @@ app.workshops = kendo.observable({
                             field: 'name',
                             defaultValue: ''
                         },
-                    }
+                        'presenter': {
+                            field: 'presenter',
+                            defaultValue: ''
+                        },
+                    },
+                    iconPresenter: function () {
+                        var i = 'contacts';
+                        return kendo.format('km-icon km-{0}', i);
+                    },
                 }
             },
         },
         dataSource = new kendo.data.DataSource(dataSourceOptions),
         workshopsModel = kendo.observable({
             dataSource: dataSource,
-            itemClick: function(e) {
+            itemClick: function (e) {
                 app.mobileApp.navigate('#components/workshops/details.html?uid=' + e.dataItem.uid);
             },
-            detailsShow: function(e) {
+            detailsShow: function (e) {
                 var item = e.view.params.uid,
                     dataSource = workshopsModel.get('dataSource'),
                     itemModel = dataSource.getByUid(item);
