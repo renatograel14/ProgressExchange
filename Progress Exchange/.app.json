@@ -26,12 +26,14 @@
           "dataProvider": "defaultProvider",
           "collection": "Workshops",
           "headerField": "name",
+          "group": "date",
           "masterDetails": true,
-          "detailHeaderField": "name",
-          "detailSubHeaderField": "date",
+          "detailHeaderField": "date",
+          "detailSubHeaderField": "name",
           "detailDescriptionField": "description",
-          "pullToRefresh": true,
-          "endlessScroll": true
+          "detailImageField": "photo",
+          "pullToRefresh": false,
+          "endlessScroll": false
         }
       ],
       "name": "workshops",
@@ -63,6 +65,14 @@
       "title": "Conference",
       "addToNavigation": true,
       "icon": "organize"
+    },
+    {
+      "type": "view",
+      "components": [],
+      "name": "location",
+      "title": "Como Chegar?",
+      "addToNavigation": true,
+      "icon": "action"
     }
   ],
   "dataProviders": [
