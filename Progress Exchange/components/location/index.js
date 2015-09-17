@@ -98,6 +98,7 @@
 
             //resize the map in case the orientation has been changed while showing other tab
             google.maps.event.trigger(map, "resize");
+            app.locationService.viewModel.onNavigateHome();
         },
 
         hide: function () {
