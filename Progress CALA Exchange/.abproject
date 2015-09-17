@@ -1,0 +1,48 @@
+{
+  "ProjectName": "Progress CALA Exchange",
+  "ProjectGuid": "ca6af718-70f7-4eb3-bbeb-9368e4e64fb9",
+  "projectVersion": 1,
+  "AppIdentifier": "com.telerik.ProgressExchange",
+  "DisplayName": "Progress CALA Exchange",
+  "Author": "PROGRESS CALA",
+  "Description": "Progress CALA Exchange",
+  "BundleVersion": "1.0",
+  "AndroidVersionCode": "1",
+  "iOSDeviceFamily": [
+    "1",
+    "2"
+  ],
+  "iOSBackgroundMode": [],
+  "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
+  "FrameworkVersion": "3.7.0",
+  "AndroidPermissions": [
+    "android.permission.INTERNET"
+  ],
+  "DeviceOrientations": [
+    "Portrait",
+    "Landscape"
+  ],
+  "AndroidHardwareAcceleration": "false",
+  "iOSStatusBarStyle": "Default",
+  "Framework": "Cordova",
+  "WP8TileTitle": "",
+  "WP8Publisher": "",
+  "WP8Capabilities": [
+    "ID_CAP_NETWORKING",
+    "ID_CAP_WEBBROWSERCOMPONENT"
+  ],
+  "WP8Requirements": [],
+  "WP8PublisherID": "{adfbddff-e382-4650-bf91-679958f14a79}",
+  "WP8ProductID": "{3ab55c76-b40c-49d1-ad46-46da36af4145}",
+  "WPSdk": "8.0",
+  "WP8PackageIdentityName": "1234Telerik.ProgressExchange",
+  "WP8WindowsPublisherName": "CN=Telerik",
+  "WP8SupportedResolutions": [
+    "ID_RESOLUTION_WVGA",
+    "ID_RESOLUTION_WXGA",
+    "ID_RESOLUTION_HD720P"
+  ],
+  "CorePlugins": [
+    "org.apache.cordova.network-information"
+  ]
+}
