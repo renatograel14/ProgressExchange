@@ -1,12 +1,12 @@
-(function() {
+(function () {
     // store a reference to the application object that will be created
     // later on so that we can use it if need be
     var app = {
         data: {}
     };
 
-    var bootstrap = function() {
-        $(function() {
+    var bootstrap = function () {
+        $(function () {
             app.mobileApp = new kendo.mobile.Application(document.body, {
 
                 // you can change the default transition (slide, zoom or fade)
@@ -21,7 +21,7 @@
 
     if (window.cordova) {
         // this function is called by Cordova when the application is loaded by the device
-        document.addEventListener('deviceready', function() {
+        document.addEventListener('deviceready', function () {
             // hide the splash screen as soon as the app is ready. otherwise
             // Cordova will wait 5 very long seconds to do it for you.
             if (navigator && navigator.splashscreen) {
@@ -29,13 +29,13 @@
             }
 
             var element = document.getElementById('appDrawer');
-            if (typeof(element) != 'undefined' && element != null) {
+            if (typeof (element) != 'undefined' && element != null) {
                 if (window.navigator.msPointerEnabled) {
-                    $("#navigation-container").on("MSPointerDown", "a", function(event) {
+                    $("#navigation-container").on("MSPointerDown", "a", function (event) {
                         app.keepActiveState($(this));
                     });
                 } else {
-                    $("#navigation-container").on("touchstart", "a", function(event) {
+                    $("#navigation-container").on("touchstart", "a", function (event) {
                         app.keepActiveState($(this));
                     });
                 }
@@ -55,7 +55,7 @@
 
     window.app = app;
 
-    app.isOnline = function() {
+    app.isOnline = function () {
         if (!navigator || !navigator.connection) {
             return true;
         } else {
@@ -66,3 +66,39 @@
 
 // START_CUSTOM_CODE_kendoUiMobileApp
 // END_CUSTOM_CODE_kendoUiMobileApp
+
+(function (g) {
+    var productId = "f81bb172cafa4552aee67aad9c10f0c3"; // App unique product key
+    // Make analytics available via the window.analytics variable
+    // Start analytics by calling window.analytics.Start()
+    var analytics = g.analytics = g.analytics || {};
+    analytics.Start = function () {
+        // Handy shortcuts to the analytics api
+        var factory = window.plugins.EqatecAnalytics.Factory;
+        var monitor = window.plugins.EqatecAnalytics.Monitor;
+        // Create the monitor instance using the unique product key for Analytics
+        var settings = factory.CreateSettings(productId);
+        settings.LoggingInterface = factory.CreateTraceLogger();
+        factory.CreateMonitorWithSettings(settings,
+            function () {
+                console.log("Monitor created");
+                // Start the monitor inside the success-callback
+                monitor.Start(function () {
+                    console.log("Monitor started");
+                });
+            },
+            function (msg) {
+                console.log("Error creating monitor: " + msg);
+            }
+        );
+    };
+    analytics.Stop = function () {
+        var monitor = window.plugins.EqatecAnalytics.Monitor;
+        monitor.Stop();
+    };
+    analytics.Monitor = function () {
+        return window.plugins.EqatecAnalytics.Monitor;
+    };
+})(window);
+
+window.analytics.Start();

@@ -42,6 +42,8 @@
     "ID_RESOLUTION_HD720P"
   ],
   "CorePlugins": [
+    "com.telerik.feedback",
+    "com.telerik.plugin.eqatecanalytics",
     "org.apache.cordova.network-information"
   ]
 }
