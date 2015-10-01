@@ -6,11 +6,10 @@
   "DisplayName": "Progress CALA Exchange",
   "Author": "PROGRESS CALA",
   "Description": "Progress CALA Exchange",
-  "BundleVersion": "1.0",
+  "BundleVersion": "1.1",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
-    "1",
-    "2"
+    "1"
   ],
   "iOSBackgroundMode": [],
   "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
@@ -42,8 +41,10 @@
     "ID_RESOLUTION_HD720P"
   ],
   "CorePlugins": [
+    "com.phonegap.plugins.PushPlugin@2.5.8",
     "com.telerik.feedback",
     "com.telerik.plugin.eqatecanalytics",
+    "org.apache.cordova.dialogs",
     "org.apache.cordova.network-information"
   ]
 }
