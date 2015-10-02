@@ -1,9 +1,4 @@
-div {
-	-webkit-font-smoothing: antialiased;
-}
-.km-back{
-    background-color: #344762;
-}
+
 
 #kendoUiMobileApp .image-with-text img {
     float: left;
@@ -116,6 +111,12 @@ div {
 
 /* START_CUSTOM_CODE_kendoUiMobileApp */
 
+div {
+	-webkit-font-smoothing: antialiased;
+}
+.km-back{
+    background-color: #344762;
+}
 
 .km-flat .km-loader{
     color: #ff471d;
